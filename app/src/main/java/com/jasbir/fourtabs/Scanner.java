@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
@@ -45,6 +46,14 @@ public class Scanner extends Activity implements ZXingScannerView.ResultHandler{
     @Override
     public void handleResult(Result result) {
 
+        String id = result.getText();
+        Toast.makeText(Scanner.this, id, Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mScannerView.stopCameraPreview();
     }
 
 }

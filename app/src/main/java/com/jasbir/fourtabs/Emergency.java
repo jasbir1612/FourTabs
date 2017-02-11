@@ -16,7 +16,7 @@ public class Emergency extends Activity {
         setContentView(R.layout.emergency);
         qr = (Button) findViewById(R.id.scan_qr);
 
-        qr.setText("Scam");
+        qr.setText("Scan");
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
